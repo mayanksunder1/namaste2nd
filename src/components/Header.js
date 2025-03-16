@@ -1,7 +1,9 @@
+import { useState } from "react";
 import logo from "../../assets/logo.webp";
 
-
 const Header = () => {
+    const [login, setLogin] = useState('Login')
+
     return (
         <div className="header">
             <div className="logo-container">
@@ -15,6 +17,7 @@ const Header = () => {
                     <li>Cart</li>
                 </ul>
             </div>
+            <button className="login-btn" onClick={()=> {login === 'Login' ? setLogin('Logout') : setLogin('Login')}}>{login}</button>
         </div>
     );
 };
